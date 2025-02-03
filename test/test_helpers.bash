@@ -15,7 +15,6 @@ setup_asdf_dir() {
   # We don't call mktemp anymore so we need to create this sub directory manually
   mkdir "$BASE_DIR"
 
-  # HOME is now defined by the Golang test code in main_test.go
   HOME="$BASE_DIR"
   export HOME
   ASDF_DIR="$HOME/.asdf"
@@ -23,8 +22,7 @@ setup_asdf_dir() {
   mkdir -p "$ASDF_DIR/installs"
   mkdir -p "$ASDF_DIR/shims"
   mkdir -p "$ASDF_DIR/tmp"
-  # ASDF_BIN is now defined by the Golang test code in main_test.go
-  #ASDF_BIN="$(dirname "$BATS_TEST_DIRNAME")/bin"
+  ASDF_BIN="$(dirname "$BATS_TEST_DIRNAME")/bin"
 
   ASDF_DATA_DIR="$BASE_DIR/.asdf"
   export ASDF_DATA_DIR
