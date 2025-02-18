@@ -200,6 +200,8 @@ install_tool_version() {
       # Run the download script
       (
         # shellcheck disable=SC2030
+        export ASDF_PLUGIN_PATH=$plugin_path
+        # shellcheck disable=SC2030
         export ASDF_INSTALL_TYPE=$install_type
         # shellcheck disable=SC2030
         export ASDF_INSTALL_VERSION=$version
@@ -216,6 +218,8 @@ install_tool_version() {
     local download_exit_code=$?
     if [ $download_exit_code -eq 0 ]; then
       (
+        # shellcheck disable=SC2030
+        export ASDF_PLUGIN_PATH=$plugin_path
         # shellcheck disable=SC2031
         export ASDF_INSTALL_TYPE=$install_type
         # shellcheck disable=SC2031
